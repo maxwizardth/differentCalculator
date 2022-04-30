@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="description"
+  content="free Maths tutorial">
+    <meta name="author"
+    content="Abdull Maxwizard">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>graphical calculator table</title>
+</head>
+<body>
+  <style type="text/css">
+    #a,#b,#c,#r1,#r2{width: 4vw;
+      height: 5vh;
+      background-color: #83a344;
+      background:#8aa222;
+      color: pink;
+      font-size: 23px;
+      margin-top: 3vh;
+      text-align: center;
+    }
+      #calculatorcontainer{background-color: red;
+        margin:55px;
+          width: 80vw;
+          height: 20vh;
+          font-size: 33px;
+
+      }
+      #calculate,#Clear{background-color: black;
+        width:14vw;
+        height: 6vh;
+        color: white;
+        border-radius: 30%;
+        margin-top: 4vh;
+        font-size: 33px;
+         }
+      body{text-align: center;
+        width: 95vw;
+        height: 240vh;
+        background: black;
+        color: white;
+        border: solid white 5px;
+        border-bottom: black;
+        font-size: 33px;}
+      #result{
+        margin-top: 5vh;
+        height: 100vh;
+        
+      }
+      table{width: 50vw;
+        height: 9vh;
+         font-size: 22px;
+         margin-left: 15vw;}
+  </style>
+  <div id="calculatorcontainer">
+  <input type="text" placeholder ="A" id="a">X<sup>2</sup>+
+  <input type="text" placeholder= "B" id="b">X+
+  <input type="text" placeholder= "C" id="c"> RANGE: from<input type="text" placeholder= "r1" id="r1">to <input id="r2" type="text" placeholder= "r2"><br>
+  <input id="calculate" type="button" onclick="calculate()" value="calculate">
+  <input type="button" value="Clear" id="Clear">
+</div>
+  <div id="result">
+    <h3>WORKINGS</h3>
+  <h4 id="workings1"></h4>
+  <h4 id="workings2"></h4>
+<h4 id="workings3"></h4>
+<h4 id="workings4"></h4>
+<h4 id="workings5"></h4>
+<h4 id="workings6"></h4>
+  <h3>TABLE</h3>
+  <table border="2px">
+    <tr id="xaxis">
+      <td>X</td>
+    </tr>
+    <tr id="yaxis">
+      <td>Y</td>
+    </tr>
+  </table>
+  </div>
+  
+
+<script type="text/javascript">
+  alert('this is a calculator that shows you the workings and the table of your quadratic graph.');
+  alert('input the co-efficient of your A,B and C inside the input');
+  alert('input the RANGE of your table also and click calculate');
+  alert('enjoy! made by maxwizard');
+  function calculate(){var initial=document.getElementById('r1').value;
+  var end=document.getElementById('r2').value;
+  var a=document.getElementById('a').value;
+  var b=document.getElementById('b').value;
+  var c=document.getElementById('c').value;
+
+  for(var i=initial;i<=end;i++){
+    var y= eval(a*i**2+"+"+b*i+"+"+c);
+var step=document.getElementById("workings1").innerHTML+="when x= "+i+",<br>";
+document.getElementById("workings1").innerHTML+="Y= "+a+"x<sup>2</sup>+"+b+"x+"+c+"<br>";
+document.getElementById("workings1").innerHTML+="Y= "+a+"*"+i+"<sup>2</sup>+"+b+"*"+i+"+"+c+"<br>";
+document.getElementById("workings1").innerHTML+="Y= "+a+"*"+i**2+"+"+b*i+"+"+c+"<br>";
+document.getElementById("workings1").innerHTML+="Y= "+a*i**2+"+"+b*i+"+"+c+"<br>";
+document.getElementById("workings1").innerHTML+="Y= "+y+"<br>";
+        var td1=document.createElement("td");
+        var x=document.createTextNode(i);
+        td1.appendChild(x);
+        document.getElementById("xaxis").appendChild(td1);
+        var td2=document.createElement("td");
+        var yax=document.createTextNode(y);
+         td2.appendChild(yax);
+         document.getElementById("yaxis").appendChild(td2);
+
+  }
+  }
+</script>
+
+<script src="jquery-2.2.0.min.js"></script>
+<script >
+  $("#calculate").click(function()
+  {
+    $("#result").slideUp();
+  });
+</script>
+</body>
+</html
+
+
